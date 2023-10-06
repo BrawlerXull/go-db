@@ -88,7 +88,7 @@ func main() {
 	})
 
 	http.HandleFunc("/update", func(w http.ResponseWriter, r *http.Request) {
-		if r.Method == http.MethodPatch {
+		if r.Method == http.MethodPost {
 			decoder := json.NewDecoder(r.Body)
 			requestData := make(map[string]interface{})
 			if err := decoder.Decode(&requestData); err != nil {
